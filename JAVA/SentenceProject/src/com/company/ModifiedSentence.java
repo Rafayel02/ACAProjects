@@ -19,12 +19,11 @@ public class ModifiedSentence {
         StringBuilder result = new StringBuilder("");
 
         for (int i = 0; i < this.count; i++) {
+            String symbol = getSentenceSymbol(i);
+
             result.append(wordsArray[i]);
-            if (i != this.count - 1) {
-                result.append(" ");
-                continue;
-            }
-            result.append(".");
+            result.append(symbol);
+
         }
 
         return result.toString();
@@ -32,6 +31,14 @@ public class ModifiedSentence {
 
     public int getWordsCount() {
         return this.count;
+    }
+
+    private String getSentenceSymbol(int index) {
+        if (index != this.count - 1) {
+            return " ";
+        }
+        return ".";
+
     }
 
 }
