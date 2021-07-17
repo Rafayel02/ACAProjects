@@ -21,7 +21,6 @@ public class Main {
         System.out.println("Name: " + person3.getName() + ",\nAge: " + person3.getAge());
     }
 
-    // In addition
     private static long getMillisFromYear(int year) {
         return (long) year * 365 * 24 * 3600 * 1000;
     }

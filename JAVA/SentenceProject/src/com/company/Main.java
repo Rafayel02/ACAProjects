@@ -25,7 +25,6 @@ public class Main {
         System.out.println("Value: " + sentence2.getValue());
         System.out.println("Word count: " + sentence2.getWordsCount());
 
-        //In addition
         System.out.println("----------------");
 
         ModifiedSentence modifiedSentence = new ModifiedSentence();
