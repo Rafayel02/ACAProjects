@@ -19,8 +19,8 @@ public class LinkedIntBuffer extends IntBuffer {
         sb.append(this.getValue())
                 .append("->");
 
-        if (this.getNext() != null) {
-            sb.append(this.getNext().toString());
+        if (this.next != null) {
+            sb.append(this.next);
         } else {
             sb.append("null");
             return sb.toString();
