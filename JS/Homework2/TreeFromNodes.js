@@ -10,10 +10,10 @@ var treeNodes = [
 
 function getTreeFromNodes(nodes, res = {}, parentName = null) {
     let childNodes = []
-    for(let i = 0; i < array.length; i++) {
+    for(let i = 0; i < nodes.length; i++) {
         if(nodes[i].parent === parentName) {
-            childNodes.push(array[i])
-        }
+            childNodes.push(nodes[i])
+        } 
     }
 
     if(childNodes.length === 0) {
