@@ -67,10 +67,11 @@ function Hero() {
 
   return (
     <section className="hero" id="top" aria-label="FlintBox">
-      <motion.div className="hero-media" style={{ y, scale, opacity }} aria-hidden>
-        <div className="hero-plane hero-plane-white" />
-        <div className="hero-plane hero-plane-black" />
-        <div className="hero-grain" />
+      <motion.div className="hero-media" style={{ y, scale, opacity }}>
+        <img
+          src="/flintbox-classic.jpg"
+          alt="FlintBox Classic — white sleeve with Cricket lighter and spray"
+        />
       </motion.div>
       <div className="hero-veil" aria-hidden />
       <div className="hero-copy">
@@ -96,7 +97,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.18 }}
         >
-          Lighter + breath freshness in one pocket piece.
+          Կրակ և թարմություն՝ մեկ տեղում
         </motion.p>
         <motion.p
           className="hero-sub"
@@ -141,8 +142,9 @@ function Product() {
 
       <div className="product-grid">
         <Reveal>
-          <article className="product-card featured tone-white">
-            <div className="product-swatch" aria-hidden />
+          <article className="product-card featured">
+            <img src="/flintbox-classic.jpg" alt="FlintBox Classic white sleeve" />
+            <div className="shade" />
             <div className="body">
               <p className="sku-tag">SKU · Classic</p>
               <h3>FlintBox Classic</h3>
@@ -156,8 +158,13 @@ function Product() {
           </article>
         </Reveal>
         <Reveal delay={0.08}>
-          <article className="product-card tone-mist">
-            <div className="product-swatch" aria-hidden />
+          <article className="product-card">
+            <img
+              src="/flintbox-stand.jpg"
+              alt="Replaceable Cricket lighters on the FlintBox stand"
+              style={{ objectPosition: "18% 35%" }}
+            />
+            <div className="shade" />
             <div className="body">
               <p className="sku-tag">SKU · Lighter</p>
               <h3>Lighter Refill</h3>
@@ -170,8 +177,13 @@ function Product() {
           </article>
         </Reveal>
         <Reveal delay={0.14}>
-          <article className="product-card tone-ember">
-            <div className="product-swatch" aria-hidden />
+          <article className="product-card">
+            <img
+              src="/flintbox-stand.jpg"
+              alt="Replaceable spray refills on the FlintBox stand"
+              style={{ objectPosition: "82% 38%" }}
+            />
+            <div className="shade" />
             <div className="body">
               <p className="sku-tag">SKU · Spray</p>
               <h3>Fresh Spray Refill</h3>
@@ -186,12 +198,18 @@ function Product() {
       </div>
 
       <Reveal>
+        <figure className="banner-strip">
+          <img
+            src="/flintbox-banner.jpg"
+            alt="FlintBox banner — replaceable lighter and refresher"
+          />
+        </figure>
+      </Reveal>
+
+      <Reveal>
         <div className="dark-band" style={{ marginTop: "1.25rem" }}>
           <div className="dark-band-grid">
-            <div className="stand-visual" aria-hidden>
-              <div className="stand-block" />
-              <p className="stand-caption">Your stand photo / .blend goes here</p>
-            </div>
+            <img src="/flintbox-stand.jpg" alt="Matte black FlintBox retail stand with Classic units" />
             <div className="copy">
               <p className="eyebrow">Retail fixture</p>
               <h2 className="h2" style={{ color: "#f7f8fa" }}>
@@ -199,7 +217,8 @@ function Product() {
               </h2>
               <p className="lede">
                 Matte black acrylic, 274.15 × 240.91 × 160.94&nbsp;mm. CapEx {money(15700)} per store —
-                not in unit COGS. Pilot assumes 5 stands = {money(78500)}.
+                not in unit COGS. Pilot assumes 5 stands = {money(78500)}. Source:
+                FlintBox-display-with-final-banner.blend
               </p>
               <ul>
                 <li>12 Classic · 12 lighter refills · 12 spray refills</li>
@@ -458,7 +477,8 @@ function Specs() {
           <h2 className="h2">CAD truths, not yet proven fits.</h2>
           <p className="lede">
             Dimensions from FlintBox-all-dimensions.json (22.11.2026), mm. Physical clearance on the
-            latest print is still unverified.
+            latest print is still unverified. CAD source: FlintBox-final-product-case-sleeve-fit-R5.45.stl
+            · logo art: FlintBox-dark-logo-23.8x21.8mm.pdf
           </p>
         </div>
       </Reveal>
