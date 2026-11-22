@@ -39,9 +39,8 @@ function Nav() {
   return (
     <header className={`site-nav${scrolled ? " scrolled" : ""}`}>
       <div className="shell site-nav-inner">
-        <a className="brand" href="#top">
-          <span className="brand-mark">F</span>
-          <span className="brand-name">FlintBox</span>
+        <a className="brand" href="#top" aria-label="FlintBox">
+          <img className="brand-logo" src="/flintbox-logo.png" alt="FlintBox" />
         </a>
         <nav className="nav-links" aria-label="Sections">
           <a href="#product">Product</a>
