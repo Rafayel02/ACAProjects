@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const money = (n: number) =>
   new Intl.NumberFormat("en-US").format(n).replace(/,/g, "\u00a0") + " AMD";
@@ -59,25 +59,29 @@ function Nav() {
 }
 
 function Hero() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 40]);
-  const opacity = useTransform(scrollY, [0, 420], [1, 0.7]);
-
   return (
     <section className="hero" id="top" aria-label="FlintBox">
-      <motion.div className="hero-media" style={{ y, opacity }}>
-        <img
-          src="/flintbox-classic.jpg"
+      <div className="hero-glow" aria-hidden />
+      <motion.div
+        className="hero-media"
+        initial={{ opacity: 0, y: 36, scale: 0.92 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <motion.img
+          className="hero-product"
+          src="/flintbox-classic.png"
           alt="FlintBox Classic — white sleeve with Cricket lighter and spray"
+          animate={{ y: [0, -14, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
         />
       </motion.div>
-      <div className="hero-veil" aria-hidden />
       <div className="hero-copy">
         <motion.p
           className="hero-kicker"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
         >
           Internal plan · v1 · 22 Nov 2026
         </motion.p>
@@ -85,7 +89,7 @@ function Hero() {
           className="hero-brand"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.08 }}
+          transition={{ duration: 0.75, delay: 0.32 }}
         >
           FlintBox
         </motion.h1>
@@ -93,7 +97,7 @@ function Hero() {
           className="hero-line"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18 }}
+          transition={{ duration: 0.7, delay: 0.42 }}
         >
           Կրակ և թարմություն՝ մեկ տեղում
         </motion.p>
@@ -101,7 +105,7 @@ function Hero() {
           className="hero-sub"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.28 }}
+          transition={{ duration: 0.7, delay: 0.52 }}
         >
           A reusable white case for a Cricket lighter and a refillable mouth spray — built for adult
           smokers who want convenience after a cigarette.
@@ -110,7 +114,7 @@ function Hero() {
           className="hero-actions"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.38 }}
+          transition={{ duration: 0.7, delay: 0.62 }}
         >
           <a className="btn" href="#economics">
             See unit economics
@@ -141,7 +145,7 @@ function Product() {
       <div className="product-grid">
         <Reveal>
           <article className="product-card featured">
-            <img src="/flintbox-classic.jpg" alt="FlintBox Classic white sleeve" />
+            <img src="/flintbox-classic.png" alt="FlintBox Classic white sleeve" />
             <div className="shade" />
             <div className="body">
               <p className="sku-tag">SKU · Classic</p>
