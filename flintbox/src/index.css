@@ -143,11 +143,13 @@ img {
 
 .hero {
   position: relative;
-  min-height: min(100svh, 980px);
+  min-height: 100svh;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-content: center;
   align-items: center;
   justify-items: center;
+  gap: 1.1rem;
   overflow: hidden;
   border-radius: 0 0 2rem 2rem;
   isolation: isolate;
@@ -155,12 +157,13 @@ img {
     radial-gradient(900px 520px at 50% 28%, rgba(232, 90, 28, 0.16), transparent 58%),
     radial-gradient(700px 480px at 50% 55%, rgba(255, 255, 255, 0.06), transparent 55%),
     linear-gradient(180deg, #1a1c20 0%, #101214 55%, #0a0b0d 100%);
-  padding: 6.5rem 1rem 2.5rem;
+  padding: 5.5rem 1rem 1.75rem;
+  box-sizing: border-box;
 }
 
 .hero-glow {
   position: absolute;
-  inset: 18% 20% 28%;
+  inset: 22% 28% 34%;
   z-index: 0;
   background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.1), transparent 68%);
   filter: blur(28px);
@@ -172,15 +175,16 @@ img {
   z-index: 1;
   display: grid;
   place-items: center;
-  width: min(100%, 420px);
+  width: min(100%, 220px);
   margin: 0 auto;
 }
 
 .hero-product {
-  width: min(100%, 340px);
+  width: min(42vw, 200px);
   height: auto;
+  max-height: 38svh;
   display: block;
-  filter: drop-shadow(0 36px 48px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(0 28px 36px rgba(0, 0, 0, 0.5));
   will-change: transform;
 }
 
@@ -188,8 +192,8 @@ img {
   position: relative;
   z-index: 2;
   width: min(100% - 0.5rem, 40rem);
-  margin: 0.5rem auto 0;
-  padding: 0 0 0.5rem;
+  margin: 0 auto;
+  padding: 0;
   color: #f7f8fa;
   text-align: center;
   display: grid;
@@ -209,32 +213,32 @@ img {
   margin: 0;
   font-family: Syne, sans-serif;
   font-weight: 800;
-  font-size: clamp(3.4rem, 12vw, 6.2rem);
+  font-size: clamp(2.6rem, 8vw, 4.4rem);
   letter-spacing: -0.06em;
-  line-height: 0.9;
+  line-height: 0.92;
 }
 
 .hero-line {
-  margin: 1.1rem 0 0;
-  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
   font-weight: 500;
   letter-spacing: -0.02em;
-  max-width: 22ch;
+  max-width: 24ch;
 }
 
 .hero-sub {
-  margin: 0.85rem 0 0;
+  margin: 0.65rem 0 0;
   color: rgba(247, 248, 250, 0.72);
-  font-size: 1rem;
-  line-height: 1.55;
-  max-width: 34ch;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 36ch;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.75rem;
+  margin-top: 1.15rem;
   justify-content: center;
 }
 
@@ -646,8 +650,13 @@ tr:last-child td {
     display: flex;
   }
 
+  .hero-media {
+    width: min(100%, 240px);
+  }
+
   .hero-product {
-    width: min(100%, 380px);
+    width: min(100%, 230px);
+    max-height: 42svh;
   }
 
   .product-grid {

@@ -72,7 +72,7 @@ function Hero() {
           className="hero-product"
           src="/flintbox-classic.png"
           alt="FlintBox Classic — white sleeve with Cricket lighter and spray"
-          animate={{ y: [0, -14, 0] }}
+          animate={{ y: [0, -10, 0] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
         />
       </motion.div>
