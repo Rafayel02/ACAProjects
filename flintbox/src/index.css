@@ -169,6 +169,7 @@ img {
   overflow: hidden;
   border-radius: 0 0 2rem 2rem;
   isolation: isolate;
+  background: #7a7168;
 }
 
 .hero-media {
@@ -176,14 +177,19 @@ img {
   inset: 0;
   z-index: -2;
   overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #8a8178 0%, #6e665e 100%);
 }
 
 .hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 52% 42%;
-  transform: scale(1.04);
+  width: auto;
+  height: auto;
+  max-width: min(100%, 560px);
+  max-height: min(92%, 780px);
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.28));
 }
 
 .hero-veil {
@@ -191,8 +197,9 @@ img {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(16, 18, 20, 0.2) 0%, rgba(16, 18, 20, 0.48) 45%, rgba(16, 18, 20, 0.92) 100%),
-    radial-gradient(700px 360px at 70% 28%, rgba(232, 90, 28, 0.16), transparent 60%);
+    linear-gradient(90deg, rgba(16, 18, 20, 0.72) 0%, rgba(16, 18, 20, 0.35) 42%, rgba(16, 18, 20, 0.12) 100%),
+    linear-gradient(180deg, rgba(16, 18, 20, 0.08) 0%, rgba(16, 18, 20, 0.2) 55%, rgba(16, 18, 20, 0.82) 100%);
+  pointer-events: none;
 }
 
 .hero-copy {
@@ -640,6 +647,16 @@ tr:last-child td {
 @media (min-width: 720px) {
   .nav-links {
     display: flex;
+  }
+
+  .hero-media {
+    justify-items: end;
+    padding-right: clamp(1rem, 6vw, 5rem);
+  }
+
+  .hero-media img {
+    max-width: min(48vw, 520px);
+    max-height: min(88%, 760px);
   }
 
   .product-grid {

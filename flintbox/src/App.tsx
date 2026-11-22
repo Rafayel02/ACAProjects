@@ -61,13 +61,12 @@ function Nav() {
 
 function Hero() {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 90]);
-  const scale = useTransform(scrollY, [0, 500], [1.04, 1.12]);
-  const opacity = useTransform(scrollY, [0, 420], [1, 0.55]);
+  const y = useTransform(scrollY, [0, 500], [0, 40]);
+  const opacity = useTransform(scrollY, [0, 420], [1, 0.7]);
 
   return (
     <section className="hero" id="top" aria-label="FlintBox">
-      <motion.div className="hero-media" style={{ y, scale, opacity }}>
+      <motion.div className="hero-media" style={{ y, opacity }}>
         <img
           src="/flintbox-classic.jpg"
           alt="FlintBox Classic — white sleeve with Cricket lighter and spray"
