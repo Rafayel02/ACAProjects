@@ -67,8 +67,10 @@ function Hero() {
 
   return (
     <section className="hero" id="top" aria-label="FlintBox">
-      <motion.div className="hero-media" style={{ y, scale, opacity }}>
-        <img src="/flintbox-classic-hero.jpg" alt="FlintBox Classic white pocket accessory" />
+      <motion.div className="hero-media" style={{ y, scale, opacity }} aria-hidden>
+        <div className="hero-plane hero-plane-white" />
+        <div className="hero-plane hero-plane-black" />
+        <div className="hero-grain" />
       </motion.div>
       <div className="hero-veil" aria-hidden />
       <div className="hero-copy">
@@ -139,10 +141,10 @@ function Product() {
 
       <div className="product-grid">
         <Reveal>
-          <article className="product-card featured">
-            <img src="/flintbox-detail.jpg" alt="FlintBox Classic detail" />
-            <div className="shade" />
+          <article className="product-card featured tone-white">
+            <div className="product-swatch" aria-hidden />
             <div className="body">
+              <p className="sku-tag">SKU · Classic</p>
               <h3>FlintBox Classic</h3>
               <p>Reusable body + Cricket + Albadent lemon spray. Target retail 1&nbsp;000 AMD.</p>
               <div className="price-row">
@@ -154,10 +156,10 @@ function Product() {
           </article>
         </Reveal>
         <Reveal delay={0.08}>
-          <article className="product-card">
-            <img src="/flintbox-classic-hero.jpg" alt="Lighter refill" style={{ objectPosition: "30% 50%" }} />
-            <div className="shade" />
+          <article className="product-card tone-mist">
+            <div className="product-swatch" aria-hidden />
             <div className="body">
+              <p className="sku-tag">SKU · Lighter</p>
               <h3>Lighter Refill</h3>
               <p>Cricket + sleeve case. Sleeve is free with Classic; 30 AMD when sold alone.</p>
               <div className="price-row">
@@ -168,10 +170,10 @@ function Product() {
           </article>
         </Reveal>
         <Reveal delay={0.14}>
-          <article className="product-card">
-            <img src="/flintbox-stand-black.jpg" alt="Spray refill on stand context" />
-            <div className="shade" />
+          <article className="product-card tone-ember">
+            <div className="product-swatch" aria-hidden />
             <div className="body">
+              <p className="sku-tag">SKU · Spray</p>
               <h3>Fresh Spray Refill</h3>
               <p>Empty atomizer + 2&nbsp;ml Albadent with loss buffer. Independent of the lighter.</p>
               <div className="price-row">
@@ -186,7 +188,10 @@ function Product() {
       <Reveal>
         <div className="dark-band" style={{ marginTop: "1.25rem" }}>
           <div className="dark-band-grid">
-            <img src="/flintbox-stand-black.jpg" alt="Matte black FlintBox retail stand" />
+            <div className="stand-visual" aria-hidden>
+              <div className="stand-block" />
+              <p className="stand-caption">Your stand photo / .blend goes here</p>
+            </div>
             <div className="copy">
               <p className="eyebrow">Retail fixture</p>
               <h2 className="h2" style={{ color: "#f7f8fa" }}>
